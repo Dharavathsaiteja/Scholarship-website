@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  section.application
+    h1 Apply for Scholarships
+    p To apply for scholarships, please provide the following details. 
+
+    form(action="/reservation", method="post")
+      div.form-group
+        label(for="full-name") Full Name:
+        input#full-name.form-control(type="text", name="full-name", required)
+      
+      div.form-group
+        label(for="email") Email:
+        input#email.form-control(type="email", name="email", required)
+      
+      div.form-group
+        label(for="student-id") Student ID:
+        input#student-id.form-control(type="text", name="student-id", required)
+        
+      div.form-group
+        label(for="scholarship-name") Scholarship Name:
+        select#scholarship-name.form-control(name="scholarship-name", required)
+          option(value="scholarship1") Fastweb
+          option(value="scholarship2") cappex
+          option(value="scholarship3") chegh scholarships
+
+      div.form-group
+        label(for="essay") Scholarship Essay:
+        textarea#essay.form-control(name="essay", rows="6", required)
+      
+      button.btn.btn-primary(type="submit") Apply
